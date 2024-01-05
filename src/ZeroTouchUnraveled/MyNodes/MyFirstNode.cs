@@ -8,5 +8,10 @@ namespace ZeroTouchUnraveled
 {
     public class MyFirstNode
     {
+        public MyFirstNode() { }
+        public static string HelloWorld()
+        {
+            return "Hello world";
+        }
     }
 }
