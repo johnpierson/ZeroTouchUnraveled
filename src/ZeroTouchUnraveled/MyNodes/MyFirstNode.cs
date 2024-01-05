@@ -18,10 +18,10 @@ namespace ZeroTouchUnraveled
         /// This is my first node that outputs a string that says Hello World. Awesome. 😁
         /// </summary>
         /// <returns name="helloWorldString">Our hello world node.</returns>
-        public static string HelloWorld()
+        public static string HelloWorld(string username)
         {
             //returns one output of hello world
-            return "Hello world";
+            return "Hello" + username;
         }
     }
 }
