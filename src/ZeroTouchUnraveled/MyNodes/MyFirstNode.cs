@@ -17,11 +17,13 @@ namespace ZeroTouchUnraveled
         /// <summary>
         /// This is my first node that outputs a string that says Hello World. Awesome. 😁
         /// </summary>
+        /// <param name="extraMessage">Optional extra message from dynamo.</param>
         /// <returns name="helloWorldString">Our hello world node.</returns>
-        public static string HelloWorld(string username)
+        public static string HelloWorld(string extraMessage = "")
         {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             //returns one output of hello world
-            return "Hello" + username;
+            return $"Hello, {userName}. {extraMessage}";
         }
     }
 }
