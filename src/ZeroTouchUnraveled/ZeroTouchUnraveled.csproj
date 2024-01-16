@@ -180,4 +180,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y $(TargetPath) "C:\Users\johnt\AppData\Roaming\Dynamo\Dynamo Revit\2.19\packages\$(TargetFileName)"
+
+copy /Y "$(TargetDir)$(TargetName).xml" "C:\Users\johnt\AppData\Roaming\Dynamo\Dynamo Revit\2.19\packages\$(TargetName).xml"
+
+
+
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
