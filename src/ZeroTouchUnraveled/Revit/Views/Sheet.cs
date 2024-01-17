@@ -76,7 +76,6 @@ namespace ZeroTouchUnraveled.Revit.Views
                 throw new System.Exception("Sorry, Revit does not allow you to number two sheets the same.");
             }
             
-
             //finish our transaction and cleanup
             TransactionManager.Instance.TransactionTaskDone();
 
