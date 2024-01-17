@@ -76,7 +76,26 @@ namespace ZeroTouchUnraveled.Revit.Views
                 //viewSheet.SheetNumber = $"{sheetNumber}*";
                 throw new System.Exception("Sorry, Revit does not allow you to number two sheets the same. Please try again");
             }
-            
+
+            //finish our transaction and cleanup
+            TransactionManager.Instance.TransactionTaskDone();
+
+            //return the original sheet back to the end user
+            return sheet;
+        }
+        /// <summary>
+        /// Live Reload modify sheet stuff
+        /// </summary>
+        /// <param name="sheet"></param>
+        /// <returns></returns>
+        public static global::Revit.Elements.Views.Sheet ModifySheetStuff(global::Revit.Elements.Views.Sheet sheet)
+        {
+            //access the current revit document
+            Autodesk.Revit.DB.Document doc = DocumentManager.Instance.CurrentDBDocument;
+
+            //start our transaction in the current file
+            TransactionManager.Instance.EnsureInTransaction(doc);
+
             //finish our transaction and cleanup
             TransactionManager.Instance.TransactionTaskDone();
 
