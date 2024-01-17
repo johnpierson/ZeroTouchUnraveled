@@ -21,9 +21,10 @@ namespace ZeroTouchUnraveled
         /// <returns name="helloWorldString">Our hello world node.</returns>
         public static string HelloWorld(string extraMessage = "")
         {
-            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            string userName = Environment.UserName;
+            
             //returns one output of hello world
-            return $"Hello, {userName}. {extraMessage}";
+            return $"Hi there! {userName}. {extraMessage} {Environment.ProcessorCount}";
         }
     }
 }

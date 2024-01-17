@@ -73,7 +73,8 @@ namespace ZeroTouchUnraveled.Revit.Views
             //if that failed return a custom error
             catch (System.Exception)
             {
-                throw new System.Exception("Sorry, Revit does not allow you to number two sheets the same.");
+                //viewSheet.SheetNumber = $"{sheetNumber}*";
+                throw new System.Exception("Sorry, Revit does not allow you to number two sheets the same. Please try again");
             }
             
             //finish our transaction and cleanup
